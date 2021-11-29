@@ -9,7 +9,7 @@ import Contact from '../Contact/Contact';
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">
+    <div className="">
       <div className="grid md:grid-cols-3 grid-cols-1 ">
         <div className="sticky top-0 ">
           <div className="md:grid grid-cols-3">
