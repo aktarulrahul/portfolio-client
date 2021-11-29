@@ -34,6 +34,7 @@ const Contact = () => {
       .catch((err) => {
         console.log('FAILED...', err);
       });
+    e.target.reset();
   };
 
   const handleChange = (e) => {
@@ -41,7 +42,7 @@ const Contact = () => {
   };
   return (
     <div>
-      <Lottie options={defaultOptions} height={'350px'} width={'auto'} />
+      <Lottie options={defaultOptions} height={'350px'} width={'330px'} />
       <h2 className="text-4xl font-bold text-center my-3 text-green-500">
         Send Me Your Message
       </h2>
@@ -57,7 +58,7 @@ const Contact = () => {
         <br />
 
         <input
-          type="text"
+          type="email"
           name="reply_to"
           placeholder="Enter Your Email"
           value={toSend.reply_to}
@@ -66,7 +67,7 @@ const Contact = () => {
         />
         <br />
 
-        <input
+        <textarea
           type="text"
           name="message"
           placeholder="Your message"
@@ -78,7 +79,7 @@ const Contact = () => {
 
         <button
           type="submit"
-          className="border border-green-400 rounded p-2 bg-green-600 w-full mb-3 text-white"
+          className="border border-green-400 rounded p-2 bg-green-400 w-full mb-3 text-white"
         >
           Submit
         </button>

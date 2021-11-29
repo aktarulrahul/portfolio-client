@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import ProjectCard from './ProjectCard';
+import Lottie from 'react-lottie';
+import contact from '../../animation/projects.json';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: contact,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   useEffect(() => {
     fetch('/portfolio.json')
       .then((res) => res.json())
@@ -10,9 +20,13 @@ const Projects = () => {
   }, []);
   return (
     <div className="">
-      <h2 className="text-4xl font-bold text-center my-3 text-green-500">
-        Previous Work
-      </h2>
+      <div className="md:flex justify-around items-center md:block hidden">
+        <h2 className="text-6xl font-bold text-green-500 uppercase">
+          Previous <br />
+          Work
+        </h2>
+        <Lottie options={defaultOptions} height={'350px'} width={'330px'} />
+      </div>
       {projects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}

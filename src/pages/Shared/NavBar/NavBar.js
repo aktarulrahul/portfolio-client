@@ -10,40 +10,53 @@ const NavBar = () => {
   };
   return (
     <div className="md:h-full">
-      <div className="flex justify-center items-center md:flex-col space-x-4 md:space-x-0 md:space-y-4 md:py-4">
-        <NavLink
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#78CC6C',
-          }}
-          to="/about"
-        >
-          About
-        </NavLink>
-        <hr />
-        <NavLink
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#78CC6C',
-          }}
-          to="/projects"
-        >
-          Works
-        </NavLink>
-        <hr className="text-blue-400" />
-        <NavLink
-          activeStyle={{
-            fontWeight: 'bold',
-            color: '#78CC6C',
-          }}
-          to="/contact"
-        >
-          Contact
-        </NavLink>
-        <hr />
+      <div className="flex justify-center items-center md:flex-col space-x-4 md:space-x-0 md:space-y-4 py-4 text-center ">
+        <div className="md:mb-2 md:p-3 md:rounded md:shadow-lg">
+          <NavLink
+            activeStyle={{
+              fontWeight: 'bold',
+              color: '#78CC6C',
+            }}
+            to="/about"
+          >
+            <p className="hidden md:block text-green-500">
+              <i className="text-3xl fas fa-address-card "></i>
+            </p>
+            <p className="text-green-500">About</p>
+          </NavLink>
+        </div>
+
+        <div className="md:mb-2 md:p-3 md:rounded md:shadow-lg">
+          <NavLink
+            activeStyle={{
+              fontWeight: 'bold',
+              color: '#78CC6C',
+            }}
+            to="/projects"
+          >
+            <p className="hidden md:block text-green-500">
+              <i className="text-3xl fas fa-address-card "></i>
+            </p>
+            <p className="text-green-500">Works</p>
+          </NavLink>
+        </div>
+        <div className="md:mb-2 md:p-3 md:rounded md:shadow-lg">
+          <NavLink
+            activeStyle={{
+              fontWeight: 'bold',
+              color: '#78CC6C',
+            }}
+            to="/contact"
+          >
+            <p className="hidden md:block text-green-500">
+              <i className="text-3xl fas fa-address-card "></i>
+            </p>
+            <p className="text-green-500">Contact</p>
+          </NavLink>
+        </div>
         <button
           onClick={handleresume}
-          className="px-4 py-2 rounded-full text-white bg-gradient-to-r from-green-400 to-green-800 hover:from-yellow-200 hover:to-yellow-500"
+          className="px-4 py-2 rounded-full text-white bg-green-400"
         >
           Resume
         </button>
