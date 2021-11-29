@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { send } from 'emailjs-com';
+import Lottie from 'react-lottie';
+import contact from '../../animation/contact.json';
 
 const Contact = () => {
   const [toSend, setToSend] = useState({
@@ -8,6 +10,15 @@ const Contact = () => {
     message: '',
     reply_to: '',
   });
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: contact,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +41,7 @@ const Contact = () => {
   };
   return (
     <div>
+      <Lottie options={defaultOptions} height={'350px'} width={'auto'} />
       <h2 className="text-4xl font-bold text-center my-3 text-green-500">
         Send Me Your Message
       </h2>
