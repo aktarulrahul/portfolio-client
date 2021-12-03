@@ -46,6 +46,20 @@ const NavBar = () => {
               fontWeight: 'bold',
               color: '#78CC6C',
             }}
+            to="/blogs"
+          >
+            <p className="hidden md:block text-green-500">
+              <i className="text-3xl fas fa-address-card "></i>
+            </p>
+            <p className="text-green-500">Blog</p>
+          </NavLink>
+        </div>
+        <div className="md:mb-2 md:p-3 md:rounded md:shadow-lg">
+          <NavLink
+            activeStyle={{
+              fontWeight: 'bold',
+              color: '#78CC6C',
+            }}
             to="/contact"
           >
             <p className="hidden md:block text-green-500">

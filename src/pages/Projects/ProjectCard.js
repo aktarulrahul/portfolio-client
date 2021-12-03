@@ -1,5 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import { useHistory } from 'react-router';
 
 const ProjectCard = ({ project }) => {
   const {
@@ -11,6 +12,7 @@ const ProjectCard = ({ project }) => {
     description,
     technology,
   } = project;
+  const history = useHistory();
   return (
     <Fade right>
       <div className="mb-5 rounded-lg overflow-hidden shadow-lg mx-1">
@@ -49,6 +51,17 @@ const ProjectCard = ({ project }) => {
               )}
             </div>
             <p>{description}</p>
+            <div className="my-3">
+              <button
+                onClick={() => {
+                  history.push(`/projects/${project.key}`);
+                }}
+                className=" px-4 py-2 mr-1 rounded-full text-white bg-green-400  hover:bg-green-600 transition duration-500 ease-in-out transform hover:scale-105"
+              >
+                See Details
+              </button>
+            </div>
+
             <div className="my-3">
               {technology.map((tech) => (
                 <span

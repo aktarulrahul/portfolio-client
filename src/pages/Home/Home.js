@@ -6,6 +6,8 @@ import NavBar from '../Shared/NavBar/NavBar';
 import PersonalInfo from '../Shared/PersonalInfo/PersonalInfo';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import Blog from '../Blog/Blog';
+import SingleProject from '../Projects/SingleProject';
 
 const Home = () => {
   return (
@@ -34,13 +36,19 @@ const Home = () => {
           <div className="rounded shadow-lg md:h-full overflow-auto p-1  bg-white">
             <Switch>
               <Route exact path="/">
-                <About />
+                <Projects />
               </Route>
               <Route path="/about">
                 <About />
               </Route>
-              <Route path="/projects">
+              <Route exact path="/projects">
                 <Projects />
+              </Route>
+              <Route exact path="/projects/:id">
+                <SingleProject />
+              </Route>
+              <Route path="/blogs">
+                <Blog />
               </Route>
               <Route path="/contact">
                 <Contact />
